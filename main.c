@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kos <kos@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sisyreet <sisyreet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 20:21:04 by kos               #+#    #+#             */
-/*   Updated: 2022/08/04 22:03:53 by kos              ###   ########.fr       */
+/*   Updated: 2022/08/10 19:36:44 by sisyreet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	define_command(char *cmd, t_env *env)
 	if (!ft_strncmp("cd", cmd, 2))
 		ft_cd(env, &cmd[3]);
 	if (!ft_strncmp("unset", cmd, 5))
-		ft_unset(env, &cmd[6]);	
+		ft_unset(env, &cmd[6]);
 }
 /* temp */
 

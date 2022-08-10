@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pwd.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kos <kos@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sisyreet <sisyreet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 21:22:05 by kos               #+#    #+#             */
-/*   Updated: 2022/07/21 21:34:11 by kos              ###   ########.fr       */
+/*   Updated: 2022/08/10 19:35:45 by sisyreet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_pwd(t_env *env)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	temp = env->head;
 	while (temp->next)

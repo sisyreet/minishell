@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_env.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kos <kos@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sisyreet <sisyreet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 22:05:00 by kos               #+#    #+#             */
-/*   Updated: 2022/08/04 22:10:19 by kos              ###   ########.fr       */
+/*   Updated: 2022/08/10 19:35:16 by sisyreet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ char	*get_env_var_value(t_env *env, char *var_name)
 void	set_env_var_value(t_env *env, char *var_name, char *new_value)
 {
 	t_list	*temp;
+
 	temp = env->head;
 	while (temp)
 	{
@@ -49,7 +50,7 @@ void	add_new_var(t_list *head, char *var_name, char *value)
 {
 	t_list	*new_node;
 	t_list	*temp;
-	
+
 	temp = head;
 	new_node = malloc(sizeof(t_list));
 	if (!new_node)
@@ -60,7 +61,6 @@ void	add_new_var(t_list *head, char *var_name, char *value)
 	while (temp->next)
 		temp = temp->next;
 	temp->next = new_node;
-		
 }
 
 void	get_env_vars(char **envp, t_env *env)
@@ -92,8 +92,8 @@ void	get_env_vars(char **envp, t_env *env)
 
 void	print_env(t_env *env)
 {
-	t_list *temp;
-	
+	t_list	*temp;
+
 	temp = env->head;
 	while (temp)
 	{

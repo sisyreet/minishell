@@ -6,24 +6,50 @@
 /*   By: sisyreet <sisyreet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 20:21:04 by kos               #+#    #+#             */
-/*   Updated: 2022/08/10 19:36:44 by sisyreet         ###   ########.fr       */
+/*   Updated: 2022/08/10 21:09:21 by sisyreet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/minishell.h"
 /* temp */
-void	define_command(char *cmd, t_env *env)
+int	define_command(char *cmd, t_env *env)
 {
 	if (!ft_strncmp("env", cmd, 3))
+	{
 		print_env(env);
-	if (!ft_strncmp("echo", cmd, 4) && ft_strlen(cmd) > 5)
+		return (0);
+	}
+	if (!ft_strncmp("echo ", cmd, 5) && ft_strlen(cmd) > 5)
+	{
 		ft_echo(&cmd[5], 0);
+		return (0);
+	}
 	if (!ft_strncmp("pwd", cmd, 3))
+	{
 		ft_pwd(env);
+		return (0);
+	}
 	if (!ft_strncmp("cd", cmd, 2))
+	{
 		ft_cd(env, &cmd[3]);
+		return (0);
+	}
 	if (!ft_strncmp("unset", cmd, 5))
+	{
 		ft_unset(env, &cmd[6]);
+		return (0);
+	}
+	if (!ft_strncmp("exit", cmd, 4))
+	{
+		ft_exit(env, "123");
+		return (0);
+	}
+	if (!ft_strncmp("export", cmd, 6))
+	{
+		ft_export(env, "yo", "you!");
+		return (0);
+	}
+	return (1);
 }
 /* temp */
 
@@ -38,7 +64,8 @@ int	ft_readline(char **envp, t_env *env)
 		line = readline("minishell> ");
 		if (line > 0)
 		{
-			define_command(line, env);
+			if (define_command(line, env))
+				printf("minishell: command not found: %s\n", line);
 			add_history(line);
 		}
 		free (line);

@@ -6,18 +6,18 @@
 /*   By: sisyreet <sisyreet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 20:21:56 by kos               #+#    #+#             */
-/*   Updated: 2022/08/10 19:36:24 by sisyreet         ###   ########.fr       */
+/*   Updated: 2022/08/10 21:00:39 by sisyreet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
-# include <linux/limits.h>
+# include <limits.h>
+# include <stdio.h>
 # include <readline/history.h>
 # include <readline/readline.h>
 # include <signal.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -52,5 +52,6 @@ int		ft_pwd(t_env *env);
 int		ft_export(t_env *env, char *var_name, char *value);
 int		ft_unset(t_env *env, char *var_name);
 void	ft_cd(t_env *env, char *path);
+void	ft_exit(t_env *env, char *args);
 
 #endif

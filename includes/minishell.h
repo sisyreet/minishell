@@ -6,7 +6,7 @@
 /*   By: sisyreet <sisyreet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 20:21:56 by kos               #+#    #+#             */
-/*   Updated: 2022/08/11 20:11:18 by sisyreet         ###   ########.fr       */
+/*   Updated: 2022/08/12 20:45:26 by sisyreet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,8 @@ int		ft_export(t_env *env, char *var_name, char *value);
 int		ft_unset(t_env *env, char *var_name);
 void	ft_cd(t_env *env, char *path);
 void	ft_exit(t_env *env, char *args);
+
+/* sources */
+char	*ft_pipe(t_env *env, char *line, void (*f));
 
 #endif

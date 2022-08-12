@@ -6,7 +6,7 @@
 /*   By: sisyreet <sisyreet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 20:21:56 by kos               #+#    #+#             */
-/*   Updated: 2022/08/10 21:00:39 by sisyreet         ###   ########.fr       */
+/*   Updated: 2022/08/11 20:11:18 by sisyreet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,19 @@ typedef struct s_list
 
 typedef struct s_env
 {
+	// t_builtin_ptr	builtins[7];
+	// char			*reserver_words[7];
+	// char			**envp;
+	// char			envp_f;
+	// char			exit_f;
+	// int				status;
+	
+	
 	t_list	*head;
 	int		num_of_env_vars;
 }	t_env;
+
+typedef int(*t_builtin_ptr)(t_list *, t_env *);
 
 /* utils */
 size_t	ft_strlen(const char *line);
